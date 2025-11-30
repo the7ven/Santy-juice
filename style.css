@@ -1,0 +1,458 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Protest+Revolution&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+}
+
+/* Navbar Styles */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 15px 0;
+  background: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(10px);
+  z-index: 1000;
+  transition: all 0.3s ease;
+}
+
+.navbar.scrolled {
+  background: rgba(0, 0, 0, 0.9);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.nav-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-family: "Protest Revolution", sans-serif;
+  font-size: 2rem;
+  font-weight: bold;
+  color: #fca400;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo span {
+  color: white;
+}
+
+.cta {
+  text-decoration: none;
+  color: white;
+  border: 1px solid whitesmoke;
+  padding: 8px 10px;
+  font-family: "Lato", sans-serif;
+  border-radius: 5px;
+  font-weight: 700;
+  transition: all ease 0.3s;
+}
+
+.cta:hover {
+  background-color: #fca400;
+  border: none;
+  color: black;
+}
+
+.nav-menu {
+  display: flex;
+  list-style: none;
+  gap: 30px;
+  align-items: center;
+}
+
+.nav-menu li a {
+  color: white;
+  text-decoration: none;
+  font-family: "Lato", sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.nav-menu li a::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: #ffd700;
+  transition: width 0.3s ease;
+}
+
+.nav-menu li a:hover::after {
+  width: 100%;
+}
+
+.nav-menu li a:hover {
+  color: #ffd700;
+}
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
+}
+
+.hamburger span {
+  width: 25px;
+  height: 3px;
+  background: white;
+  border-radius: 3px;
+  transition: all 0.3s ease;
+}
+
+.hamburger.active span:nth-child(1) {
+  transform: rotate(45deg) translate(8px, 8px);
+}
+
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(7px, -7px);
+}
+
+/* Responsive Navbar */
+@media (max-width: 768px) {
+  .hamburger {
+    display: flex;
+  }
+
+  .nav-menu {
+    position: fixed;
+    left: -100%;
+    top: 70px;
+    flex-direction: column;
+    background: rgba(0, 0, 0, 0.95);
+    width: 100%;
+    text-align: center;
+    transition: left 0.3s ease;
+    padding: 30px 0;
+    gap: 0;
+  }
+
+  .nav-menu.active {
+    left: 0;
+  }
+
+  .nav-menu li {
+    padding: 15px 0;
+    width: 100%;
+  }
+
+  .nav-menu li a {
+    font-size: 1.2rem;
+  }
+}
+
+.container {
+  width: 100%;
+  font-family: "Lato", sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 100vh;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("images/bg2.jpg");
+  background-size: cover;
+  background-position: center;
+  padding: 40px 80px;
+  gap: 60px;
+}
+
+.content {
+  flex: 1;
+  max-width: 600px;
+  z-index: 10;
+  animation: slideInLeft 1s ease-out;
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+h1 {
+  font-size: 5rem;
+  font-weight: 900;
+  color: #ffffff;
+  line-height: 1.1;
+  margin-bottom: 30px;
+}
+
+.content h1 span {
+  font-family: "Protest Revolution", sans-serif;
+  color: #fca400;
+}
+
+.description {
+  color: #b9b8b8;
+  font-size: 1.1rem;
+  line-height: 1.8;
+  font-weight: 700;
+  margin-bottom: 40px;
+}
+
+.sizes {
+  display: flex;
+  gap: 30px;
+  margin-bottom: 40px;
+}
+
+.size-option {
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.size-option:hover {
+  transform: translateY(-5px);
+}
+
+.cup-icon {
+  width: 40px;
+  height: 40px;
+  margin: 0 auto 10px;
+  background: linear-gradient(180deg, #f0f0f0 0%, #e0e0e0 100%);
+  border-radius: 10px;
+  position: relative;
+  border: 3px solid #ccc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #999;
+}
+
+.size-label {
+  color: #999;
+  font-size: 0.95rem;
+}
+
+.cta-button {
+  background: transparent;
+  border: 1px solid white;
+  padding: 18px 20px;
+  border-radius: 5px;
+  color: rgb(255, 255, 255);
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.cta-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 15px 40px rgba(255, 154, 158, 0.4);
+}
+
+.slider-section {
+  flex: 1;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: slideInRight 1s ease-out;
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.slider-container {
+  position: relative;
+  width: 100%;
+  max-width: 600px;
+  height: 600px;
+}
+
+.slide {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  width: 400px;
+  height: 500px;
+}
+
+.slide.active {
+  opacity: 1;
+}
+
+.smoothie-image {
+  object-fit: contain;
+  filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.3));
+  border-radius: 20px;
+  transform: rotate(25deg);
+}
+
+.nav-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.3);
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 10;
+  font-size: 1.5rem;
+  color: white;
+}
+
+.nav-arrow:hover {
+  background: rgba(255, 255, 255, 0.5);
+  transform: translateY(-50%) scale(1.1);
+}
+
+.nav-arrow.left {
+  left: 30px;
+}
+
+.nav-arrow.right {
+  right: 30px;
+}
+
+.dots {
+  position: absolute;
+  bottom: -50px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: rgba(219, 223, 4, 0.3);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.dot.active {
+  background: linear-gradient(135deg, #fcc100 0%, #f1c604 100%);
+  width: 30px;
+  border-radius: 6px;
+}
+
+@media (max-width: 1024px) {
+  .container {
+    padding: 40px 40px;
+    gap: 40px;
+  }
+
+  h1 {
+    font-size: 4rem;
+  }
+
+  .circle-bg {
+    width: 400px;
+    height: 400px;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    padding-top: 100px;
+    text-align: center;
+  }
+
+  .content {
+    max-width: 100%;
+  }
+
+  h1 {
+    font-size: 3rem;
+  }
+
+  .sizes {
+    justify-content: center;
+  }
+
+  .slider-container {
+    height: 500px;
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 2.5rem;
+  }
+
+  .description {
+    font-size: 1rem;
+  }
+
+  .sizes {
+    gap: 15px;
+  }
+
+  .cup-icon {
+    width: 30px;
+    height: 30px;
+  }
+
+  .slide {
+    width: 300px;
+    height: 400px;
+  }
+
+  .smoothie-image {
+    width: 100%;
+  }
+
+  .nav-arrow.left {
+    left: -170px;
+  }
+
+  .nav-arrow.right {
+    right: -170px;
+  }
+
+ 
+}

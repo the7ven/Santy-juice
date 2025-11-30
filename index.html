@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Santy juice</title>
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar">
+      <div class="nav-container">
+        <a href="#" class="logo"> <span>Santy</span> Juice </a>
+
+        <ul class="nav-menu">
+          <li><a href="#accueil">Accueil</a></li>
+          <li><a href="#produits">Nos Produits</a></li>
+          <li><a href="#apropos">À Propos</a></li>
+          <li><a href="#benefices">Bienfaits</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+
+         <a href="#" class="cta"> order now </a>
+
+        <div class="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+    </nav>
+
+    <section class="hero">
+
+        <div class="container">
+        <div class="content">
+            <h1>Bienvenue<br> Chez <span>Santy Juicy</span></h1>
+            <p class="description">
+                Venez essayer une nouvelle saveur avec nos recettes de saison originales de jus de fruits et de boissons. Choisissez votre taille et savourez votre boisson préférée
+            </p>
+            
+            <div class="sizes">
+                <div class="size-option">
+                    <div class="cup-icon">S</div>
+                    <div class="size-label">200 ml</div>
+                </div>
+                <div class="size-option">
+                    <div class="cup-icon">M</div>
+                    <div class="size-label">350 ml</div>
+                </div>
+                <div class="size-option">
+                    <div class="cup-icon">L</div>
+                    <div class="size-label">500 ml</div>
+                </div>
+            </div>
+            
+            <button class="cta-button">Nos Produits</button>
+        </div>
+        
+        <div class="slider-section">
+            <div class="slider-container">
+               
+                
+                <div class="slide active">
+                    <img src="images/s4.png" alt="Blueberry Smoothie" class="smoothie-image">
+                </div>
+                
+                <div class="slide">
+                    <img src="images/s2.png" alt="Strawberry Smoothie" class="smoothie-image">
+                </div>
+                
+                <div class="slide">
+                    <img src="images/s1.png" alt="Mango Smoothie" class="smoothie-image">
+                </div>
+                
+                <div class="nav-arrow left" onclick="changeSlide(-1)">‹</div>
+                <div class="nav-arrow right" onclick="changeSlide(1)">›</div>
+                
+                <div class="dots">
+                    <div class="dot active" onclick="goToSlide(0)"></div>
+                    <div class="dot" onclick="goToSlide(1)"></div>
+                    <div class="dot" onclick="goToSlide(2)"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    </section>
+
+
+    <script src="scripts.js"></script>
+  </body>
+</html>
